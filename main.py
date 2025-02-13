@@ -60,7 +60,6 @@ class DecorationClaimer:
         with self.proxy_lock:
             for _ in range(len(self.proxies)):
                 proxy = next(self.proxy_cycle)
-                print(f"Trying proxy: {proxy}")  # Debugging
                 if proxy not in self.failed_proxies:
                     return proxy
             self.failed_proxies.clear()
